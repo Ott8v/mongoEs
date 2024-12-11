@@ -7,7 +7,7 @@ const expirence = {
 
 }
 
-const studentSchema = new Schema({
+export const studentSchema = new Schema({
     name: {
         type: String,
         required: [true, "Name is required"]
@@ -27,6 +27,10 @@ const studentSchema = new Schema({
             message: (props) => `${props.value} is not a valid email`
         }
     },
+    birthdate: {
+        type: Date,
+        required: [true, "Date of birth is required"]
+    },
     expirence:{
         type: String,
         enum: Object.values(expirence),
@@ -44,6 +48,4 @@ const studentSchema = new Schema({
 
 });
 
-const Student = Model("Student", studentSchema);
-
-export default Student;
+export const Student = Model("Student", studentSchema);

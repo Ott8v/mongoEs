@@ -26,7 +26,7 @@ export const courseSchema = new Schema({
         required: [true, "Price is required"]
     },
     students: [{ type: Schema.Types.ObjectId, ref: "Student", unique: [true, "Student already subcribed to this course"], default: [] }],
-    numberStudents: {
+    studentsNumber: {
         type: Number,
         min: [0, "Number of students can't be negative"],
         default: 0,
